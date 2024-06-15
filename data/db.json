@@ -12,7 +12,7 @@
     },
     {
       "name": "Redux",
-      "description": "State management. Actions everwhere!",
+      "description": "State management. ",
       "id": 3
     }
   ],
@@ -53,6 +53,12 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "What is a BrowserRouter?",
+      "back": "A <BrowserRouter> stores the current location in the browser's address bar using clean URLs and navigates using the browser's built-in history stack.",
+      "deckId": 2,
+      "id": 9
     }
   ]
 }
