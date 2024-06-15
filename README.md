@@ -1,12 +1,16 @@
 # Flashcard-o-matic
 
-Redoing this projec to give me some piece of mind. 
+### The final project for the Chegg Skills Frontend Web Development course.
 
-1. ~~Really figure out the deal with breadcrumbs. ~~
-2. Make the breadcrums a link.
-3. Really make breadcrumbs a component. 
+### Project description
+A local school has decided to put together a flash card application, Flashcard-o-matic, to help their students study online. Teachers will use this application to create decks of flash cards for the subjects that they teach, and students will study the decks. The school needs you to build the application that the students and teachers will use.
 
-Routes to Make
-- `/decks/:deckId/study`
-- `/decks/:deckId/cards/new`
-- `/decks/:deckId/cards/:cardId/edit`
+### Featuers
+- CRUD capabilties. 
+- Confirmation window for when a user deletes an item. 
+- Error handling. 
+
+### Tools used
+- Create React App.
+- React Router
+- Jest
