@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { createDeck } from "../utils/api";
 
 function AddDeck() {
@@ -30,6 +30,13 @@ function AddDeck() {
   return (
     <>
       <h1>Create Deck</h1>
+
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to={'/'}>Home</Link></li>
+          <li className="breadcrumb-item active">Create Deck</li>
+        </ol>
+      </nav>
 
       <form className="mt-2" onSubmit={handleSubmit}>
         <div className="form-group">
