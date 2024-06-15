@@ -6,6 +6,9 @@ import DeckList from "../Deck/DeckList";
 import AddDeck from "../Deck/AddDeck";
 import DeckDetailsPage from "../Deck/DeckDetailsPage";
 import DeckEditPage from "../Deck/DeckEditPage";
+import DeckStudyPage from "../Deck/DeckStudyPage";
+import NewCardPage from "../Card/NewCardPage";
+import EditCardPage from "../Card/EditCardPage";
 
 function Layout() {
   return (
@@ -18,11 +21,11 @@ function Layout() {
           <Route path="/decks/new" element={<AddDeck />} />
           <Route path="/decks/:deckId" element={<DeckDetailsPage />} />
           <Route path="/decks/:deckId/edit" element={<DeckEditPage />} />
-          <Route path="/decks/:deckId/study" element={"DeckStudy"} />
-          <Route path="/decks/:deckId/cards/new" element={"NewCard"} />
+          <Route path="/decks/:deckId/study" element={<DeckStudyPage />} />
+          <Route path="/decks/:deckId/cards/new" element={<NewCardPage />} />
           <Route
             path="/decks/:deckId/cards/:cardId/edit"
-            element={"EditCard"}
+            element={<EditCardPage />}
           />
 
           <Route path="*" element={<NotFound />} />
