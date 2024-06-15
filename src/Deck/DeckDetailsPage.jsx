@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { deleteDeck, readDeck } from "../utils/api";
+import { deleteCard, deleteDeck, readDeck } from "../utils/api";
 
 function DeckDetailsPage() {
   const { deckId } = useParams();
@@ -40,8 +40,19 @@ function DeckDetailsPage() {
       console.log("Can't delete deck", error);
     }
   };
-
-  console.log(deck);
+  
+  const handleCardDelete = async (id) => {
+    const abortController = new AbortController();
+    
+    try {
+      if (window.confirm("Are you sure?")) {
+        await deleteCard(id, abortController.signal);
+        navigate("/");
+      }
+    } catch (error) {
+      console.log("Cannot delete card.", error);
+    }
+  };
 
   if (pageError) {
     return <h1>Deck does not exist</h1>;
@@ -100,7 +111,7 @@ function DeckDetailsPage() {
                 </Link>
                 <button
                   className="btn btn-danger"
-                  onClick={() => alert(card.id)}
+                  onClick={() => handleCardDelete(card.id)}
                 >
                   Delete
                 </button>
@@ -109,7 +120,9 @@ function DeckDetailsPage() {
           </div>
         ))
       ) : (
-        <div>Empty deck. Add cards.</div>
+        <div className="mt-3">
+          <h3>Empty deck. Please add a card.</h3>
+        </div>
       )}
     </>
   );
